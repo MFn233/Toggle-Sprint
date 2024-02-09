@@ -1,0 +1,39 @@
+1 ICON "favicon.ico"
+#include <winver.h>
+
+#define NAME "Toggle Sprint"
+#define VERSION 1, 0, 0, 0
+
+#define STR(x) #x
+#define VER_JOIN(a, b, c, d) STR(a.b.c.d)
+#define VER_JOIN_(x) VER_JOIN x
+#define VER_STR VER_JOIN_((VERSION))
+
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION VERSION
+    PRODUCTVERSION VERSION
+    FILEFLAGSMASK 0x3fL
+
+    FILEOS VOS__WINDOWS32
+    FILETYPE VFT_APP
+    FILESUBTYPE 0x0L
+    BEGIN
+        BLOCK "StringFileInfo"
+        BEGIN
+            BLOCK "000004b0"
+            BEGIN
+                VALUE "CompanyName", "MFn"
+                VALUE "FileDescription", NAME
+                VALUE "FileVersion", VER_STR
+                VALUE "InternalName", "Toggle Sprint.exe"
+                VALUE "LegalCopyright", "Copyright (C) 2024 MFn"
+                VALUE "OriginalFilename", "Toggle Sprint.exe"
+                VALUE "ProductName", NAME
+                VALUE "ProductVersion", VER_STR
+            END
+        END
+        BLOCK "VarFileInfo"
+        BEGIN
+            VALUE "Translation", 0, 1200
+        END
+    END
